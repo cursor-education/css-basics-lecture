@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/zenburn.css">
+        <style type="text/css">
+          .abbr i {
+            color: orange;
+            text-decoration: none;
+            text-transform: none;
+            font-style: normal;
+          }
+          .w-1-2 {
+            width: 48%;
+            float: left;
+          }
+          .reveal .demo h1 {
+            font-size: 24px;
+          }
+          .reveal .demo h2 {
+            font-size: 22px;
+          }
+          .reveal .demo h3 {
+            font-size: 20px;
+          }         
+          .reveal .demo h4 {
+            font-size: 18px;
+          }
+          .reveal .demo h5 {
+            font-size: 16px;
+          }
+          .reveal .demo h6 {
+            font-size: 14px;
+          }
+          .reveal .demo p {
+            font-size: 16px;
+          }
+          .reveal .demo * {
+            text-transform: none;
+            text-align: left;
+            font-size: 16px;
+          }
+          .reveal .demo pre {
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+          }
+          .reveal .demo ul, .reveal .demo ol, .reveal .demo dl {
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+            float: left;
+          }
+          .reveal .demo ul ul, .reveal .demo ol ul,
+          .reveal .demo ul ol, .reveal .demo ol ol {
+            float: none;
+          }
+          .reveal .demo blockquote {
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+          }
+          .reveal .demo {
+            border: 2px solid grey;
+            padding: 2%;
+            width: 34%;
+            margin-top: 20px;
+            position: relative;
+          }
+          .reveal .demo:before {
+            position: absolute;
+            content: 'demo.html';
+            display: block;
+            background: #4250ff;
+            height: 28px;
+            width: 100px;
+            top: -28px;
+            left: 0;
+            line-height: 28px;
+            font-size: 16px;
+            color: white;
+          }
+          .reveal .demo a {
+            float: left;
+          }
+          .reveal .demo table {
+            float: left;
+          }
+          .reveal .demo tr, .reveal .demo td, .reveal .demo th {
+            border: none;
+          }
+          .reveal .table-demo {
+            width: 100%;
+            border: #ccc solid 1px;
+            border-collapse: collapse;
+          }
+          .reveal .table-demo caption {
+            text-align: right;
+            font-size: 12px;
+            font-style: italic;
+            padding-right: 10px;
+          }
+          .reveal .table-demo th,
+          .reveal .table-demo td {
+            padding: 5px;
+            border: 1px solid #ccc;
+          }
+          .reveal .demo form textarea {
+            float: left;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+          }
+          .reveal p {
+            text-align: left;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+          <div class="slides">
+            <section>
+              <h1>CSS</h1>
+            </section>
+            <section>
+              <h3>CSS - Cascading Style Sheets</h3>
+              <ul>
+                <li>a browser’s style</li>
+                <li>an author’s style</li>
+                <li>a user’s styles</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Benefits of styles</h3>
+              <ul>
+                <li>The separation of code and design;</li>
+                <li>Different design for different devices;</li>
+                <li>Extended methods to design elements over HTML;</li>
+                <li>Accelerate site download speed;</li>
+                <li>The only style design set for all documents on a web site;</li>
+                <li>Centralized storage.</li>
+              </ul>
+            </section>
+            <section>
+              <h3>How to add styles to the page</h3>
+            </section>
+            <section>
+              <section>
+                <h3>External style</h3>
+                <div>
+                  <div class="w-1-2">index.html</div>
+                  <div class="w-1-2">style.css</div>
+                </div>
+                <div data-markdown class="w-1-2">
+                  <script type="text/template">
+                  ```html
+                  <!DOCTYPE HTML>
+                  <html>
+                   <head>
+                    <meta charset="utf-8">
+                    <title>Styles</title>
+                    <link rel="stylesheet" 
+                      href="css/style.css">
+                   </head>
+                   <body>
+                     <h1>Heading</h1>
+                     <p>Content</p>
+                   </body>
+                  </html>
+                  ```
+                  </script>
+                </div>
+                <div data-markdown class="w-1-2">
+                  <script type="text/template">
+                  ```css
+                  h1 {
+                    color: #000080;
+                    font-size: 200%;
+                    text-align: center;
+                  }
+                  p {
+                    padding: 20px;
+                    background: yellow;
+                  }
+                  ```
+                  </script>
+                </div>
+              </section>
+            </section>
+            <section>
+              <h3>Global page styles</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <!DOCTYPE HTML>
+                <html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>Global styles</title>
+                  <style>
+                   h1 {
+                     font-family: Verdana, Arial, Helvetica, sans-serif;
+                     color: #333366;
+                   }
+                  </style>
+                 </head>
+                 <body>
+                  <h1>Hello, world!</h1>
+                 </body>
+                </html>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Global or file imports</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <!DOCTYPE HTML>
+                <html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>Styles</title>
+                  <style>
+                    @import "style-1.css";
+                    @import url("style-2.css");
+                  </style>
+                 </head>
+                 <body>
+                   <h1>Heading</h1>
+                   <p>Content</p>
+                 </body>
+                </html>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Tag inner styles</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <!DOCTYPE HTML>
+                <html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>Inner styles</title>
+                 </head>
+                 <body>
+                  <h1 style="font-size: 120%; color: #cd66cc">Hello, world!</h1>
+                </body>
+                </html>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>How to add styles to the page.</h3>
+              <p>All described methods of using CSS can be used either alone or in combination with each other. In this case, is necessary to remember their hierarchy.</p>
+              <ul>
+                <li>tag inner style - highest priority</li>
+                <li>global style, external style - lower priority</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Device Types</h3>
+              <div data-markdown>
+                <script type="text/template">
+                | Value         | Description    | Status |
+                | ------------- |:-------------:|-------------:|
+                | all           | Used for all media type devices | Active |
+                | print         | Used for printers       | Active |
+                | screen        | Used for computer screens, tablets, smart-phones etc.       | Active |
+                | speech        | Used for screenreaders that "reads" the page out loud       | Active |
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Specify the type of media. @import</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <!DOCTYPE HTML>
+                <html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>Імпорт стилю</title>
+                  <style>
+                    @import "/style/main.css" screen; 
+                    /* Style for output to monitor */
+                    @import "/style/print-and-speech.css" print, speech; 
+                    /* Style Print and Screenreaders */
+                  </style>
+                 </head>
+                 <body>
+                  <p>...</p>
+                 </body>
+                </html>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Specify the type of media. @media</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                @media screen {
+                   /* Style for display in a browser */
+                   body {
+                     font-family: Arial, Verdana, sans-serif;
+                   }
+                 }
+                 @media print {
+                   /* Style for printing */
+                   body {
+                     font-family: Times, 'Times New Roman', serif;
+                   }
+                 }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Specify the type of media. Attribute “media”</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>Devices</title>
+                  <link media="print, handheld" rel="stylesheet" href="print.css">
+                  <link media="screen" rel="stylesheet" href="main.css">
+                 </head>
+                 <body>
+                  <p>...</p>
+                 </body>
+                </html>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>The basic syntax of CSS</h3>
+              <img src="img/css-syntax.png">
+            </section>
+            <section>
+              <h3>Coments in css</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                /*
+                  Style is designed for introductory purposes
+                 */
+                div {
+                  width: 200px; /* a width of the block */
+                }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Priority Matters</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                p { COLOR: green; }
+                p { color: RED; }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Types of css values</h3>
+              <p>Strings</p>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                li:before {content: 'Hello'}
+                
+                ```
+                </script>
+              </div>
+              <p>Numbers</p>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                p {
+                  font-weight: 600; line-height: 1.2;
+                }
+                
+                ```
+                </script>
+              </div>
+              <p>URLs</p>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                a { background: url(warn.png) no-repeat }
+                
+                ```
+                </script>
+              </div>
+              <p>Keywords</p>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                p { text-align: right; }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Types of css values</h3>
+              <p>Colors</p>
+              <ul>
+                <li>By hexadecimal values: #6609CF, #fc0</li>
+                <li>By name: white, silver, gray, black, red, orange, ...</li>
+                <li>RGB: rgb(255, 0, 0)</li>
+                <li>RGBA: rgba(0,255,0,0.3)</li>
+                <li>HSL: hsl(120,100%, 25%)</li>
+                <li>HSLA: hsla(120,100%, 50%, 0.3)</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Types of css values</h3>
+              <p>Dimensions. Relative units</p>
+              <p>em, rem, px, %, vw, vh, vmin, vmax</p>
+              <p>Dimensions. Absolute units</p>
+              <p>in, cm, mm, pt, pc</p>
+            </section>
+            <section>
+              <h3>Selector. Tag</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                p {
+                  text-align: right;
+                  color: green;
+                }
+                </style>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+                  elit, sed do eiusmod tempor</p>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Selector. Class</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                   p {
+                     color: #009;
+                   }
+                   p.cite {
+                     margin-left: 20px;
+                     border-left: 1px solid red;
+                     padding-left: 15px;
+                   }
+                   .article {
+                     font-size: 11px;
+                   }
+                </style>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+                  elit, sed do eiusmod tempor</p>
+                <p class="cite">Ut enim ad minim veniam, quis nostrud 
+                  exercitation ullamco laboris nisi ut.</p>
+                <p class="article">Excepteur sint occaecat cupidatat 
+                  non proident</p>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Selector. ID</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                  #help {
+                    width: 520px;
+                    padding: 100px;
+                    background: #fc0;
+                  }
+                </style>
+                <div id="help">
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                 Duis aute irure dolor in reprehenderit in voluptate velit 
+                 esse cillum dolore eu fugiat nulla pariatur.
+                </div>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Context Selectors</h3>
+              <div data-markdown class="w-1-2">
+                <script type="text/template">
+                ```css
+                * { margin: 0; }
+                 a {
+                   color: red;
+                 }
+                 div b {
+                   font-family: Times, serif;
+                 }
+                 .main-nav {
+                   margin: 0;
+                   padding: 0;
+                   list-style: none;
+                 }
+                 .main-nav li {
+                   margin: 0 0 10px 0;
+                   padding: 3px;
+                   background: #fc0;
+                 }
+                 .main-nav a {
+                   color: #000;
+                 }
+                
+                ```
+                </script>
+              </div>
+              <div data-markdown class="w-1-2">
+                <script type="text/template">
+                ```html
+                <p><b>Bold text</b>, normal text</p>
+                <div>Hello <b>another bold text</b></div>
+                <p><a href="#">Some link</a></p>
+                <ul class="main-nav">
+                  <li><a href="#">Home page</a></li>
+                  <li><a href="#">About me</a></li>
+                  <li><a href="#">Contacts</a></li>
+                </ul>
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Next Selector</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                 b + i {
+                   color: yellow;
+                 }
+                </style>
+                <p>Lorem <b>ipsum </b> dolor sit amet, 
+                  <i>"first i"</i> adipiscing <i>"second i"</i> elit.</p>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Direct Children Selector</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                  p > .name {
+                    color: red;
+                  }
+                </style>
+                <p>
+                  Lorem <i class="name">ipsum</i> dolor <span>sit
+                 <i class="name">amet</i></span>
+                </p>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Attribute Selector</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                [title] {
+                  color: maroon;
+                }
+                a[href] {
+                  background: green;
+                }
+                a[target="_blank"] {
+                  background: #ccc;
+                  padding-left: 15px;
+                }
+                </style>
+                <q title="Some title text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit</q>
+                <p><a href="#link">Посилання</a></p>
+                <p><a href="#link" target="_blank">
+                  Посилання відкриється в новому вікні</a></p>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Advanced attributes selectors</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                /* Attribute value starts with some text */
+                a[href^="http://" ] {
+                  color: red;
+                }
+                /* If link ends with ".com" */
+                a[href$=".com"] {
+                  background: #fc0;
+                }
+                /* If link contains "google" */
+                [href*="google"] {
+                  background: yellow;
+                }
+                /* One of the several attribute values */
+                [title~="block"] {
+                  color: green;
+                }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Pseudo classes</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                a:link {
+                 color: #036; /* The color of not visited links */
+                }
+                a:hover {
+                 color: #f00; /* The color of links on mouse pointer hovering */
+                }
+                a:visited {
+                 color: #606; /* The color of visited links */
+                }
+                a:visited:hover {
+                 color: #303; /* The color of not visited links on hover */
+                }
+                a:active {
+                 color: #ff0; /* The color of active links */
+                }
+                b:first-child {
+                  color: red; /* The color of the first tag */
+                }
+                b:last-child {
+                  color: green; /* The color of the last tag */
+                }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Pseudo elements</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                <style>
+                 p:before { /* creates element before content */
+                   content: "";
+                   display: inline-block;
+                   width: 20px;
+                   height: 1em;
+                   margin-right: 10px;
+                   background: #f3c;
+                 }
+                 p:after { /* creates element after content */
+                   content: " - a Rule";
+                   color: #666;
+                 }
+                </style>
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Grouping</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```css
+                h1, h2, h3 {
+                  font-family: Arial, Helvetica, sans-serif;
+                }
+                h1 {
+                  font-size: 160%;
+                  color: #003;
+                }
+                
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Inheritance</h3>
+              <div data-markdown>
+                <script type="text/template">
+                ```html
+                <style>
+                body {
+                  font-family: Arial, Helvetica, sans-serif;
+                  color: navy;
+                }
+                div {
+                  color: black;
+                }
+                div.red {
+                  color: red;
+                }
+                </style>
+
+                <html>
+                Hello
+                <div>Hello, i’m div!</div>
+                <div class="red">Hello, i’m red!</div>
+                </html>
+                ```
+                </script>
+              </div>
+            </section>
+            <section>
+              <h3>Cascading</h3>
+              <p>Cascading refers simultaneous use of different style rules to document elements by connecting multiple style files, inheritance of properties and other methods.</p>
+              <ul>
+                <li>Browser’s style</li>
+                <li>Author’s style</li>
+                <li>User’s style</li>
+                <li>The author's style adding !Important</li>
+                <li>The user’s style adding !Important</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Selector’s weight</h3>
+              <img src="img/weight.jpg" alt="">
+              <p>For each identifier (hereinafter denote the number through a) 
+              there are 100 point, for each class and pseudoclass (b) there 
+              are 10 point for each tag selectors and pseudoselector (c) 
+              there is 1 point. Composing ​​listed values in any particular 
+              order, we obtain the weight for the selector</p>
+            </section>
+            <section>
+              <h3>Selector’s weight</h3>
+              <p style="text-align: center;">STYLE ---- ID ---- CLASS ---- ELEMENT</p>
+              <img src="img/table.png" alt="">
+            </section>
+            <section>
+              <section>
+                <h3>text</h3>
+                <p>
+                  <ul>
+                    <li>color
+                    <li>text-indent
+                    <li>text-align
+                    <li>text-decoration
+                    <li>letter-spacing
+                    <li>text-transform
+                  </ul>
+                </p>
+              </section>
+            </section>
+            <section>
+              <h2>font</h2>
+              <p>
+                <ul>
+                  <li>font-family: family-name | generic-family
+                  <li>font-style: normal | italic
+                  <li>font-variant
+                  <li>font-weight
+                  <li>font-size: length | percentage
+                  <li>font: [font-style | font-varian | font-height] font-size [line-height] font-family
+                  <li>font: bold 24px Tahoma;
+                </ul>
+              </p>
+            </section>
+            <section>
+              <h2>Margin</h2>
+              
+              <p>
+                <ul>
+                  <li>margin: top right bottom left
+                  <li>margin-top: length | percentage | auto
+                  <li>margin-right: length | percentage | auto
+                  <li>margin-bottom: length | percentage | auto
+                  <li>margin-left: length | percentage | auto
+                </ul>
+              </p>
+            </section>
+            <section>
+              <h2>Display</h2>
+              <p>
+                <ul>
+                  <li>block
+                  <li>inline
+                  <li>inline-block
+                  <li>none
+                  <li>table, inline-table
+                </ul>
+              </p>
+            </section>
+            <section>
+              <h2>background</h2>
+              <p>
+                <pre><code data-trim contenteditable>
+    background: color image position/size repeat
+            origin clip attachment initial|inherit;
+                </code></pre>
+                <ul>
+                  <li>background-color
+                  <li>background-image
+                  <li>background-repeat
+                  <li>background-attachment
+                  <li>background-position
+                </ul>
+              </p>
+            </section>
+            
+            <section>
+              <section>
+                <h2>Box model</h2>
+                <p>
+                  <img src="http://ru.html.net/tutorials/css/figure008.ru.gif" />
+                  
+                </p>
+              </section>
+              
+              <section>
+                <h2>Box model (IE)</h2>
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/box-model.gif" />
+                </p>
+              </section>
+              
+              <section>
+                <p>
+                  <img src="http://ru.html.net/tutorials/css/figure010.gif" />
+                </p>
+                
+                <pre><code data-trim contenteditable>
+    * {
+      box-sizing: border-box;
+    }
+                </code></pre>
+              </section>
+            </section>
+
+            <section>
+              <section>
+                <h2>border</h2>
+                
+                <p>
+                  <ul>
+                    <li>border-width
+                    <li>border-color
+                    <li>border-style
+                    <li>border
+                  </ul>
+                </p>
+              </section>
+            </section>
+            
+            <section>
+              <section>
+                <h2>Positioning</h2>
+                <p>
+                  <pre><code data-trim contenteditable>
+    .element {
+      position: static; /* default */
+      position: relative;
+      position: absolute;
+      position: fixed;
+      position: sticky;
+    }
+                  </code></pre>
+                </p>
+              </section>
+            </section>
+            
+            <section>
+              <section>
+                <h2>Floating</h2>
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/web-text-wrap.png" />
+                  <br/>
+
+                  <pre><code data-trim contenteditable>
+    .element {
+        float: left;
+    }
+                  </code></pre>
+                </p>
+              </section>
+
+              <section>
+                <h2>Floating</h2>
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/web-layout.png" />
+                  <br/>
+
+                  <pre><code data-trim contenteditable>
+    .element {
+        float: right;
+    }
+                  </code></pre>
+                </p>
+              </section>
+            </section>
+            
+            <section>
+              <section>
+                <h2>How Browser Works?</h2>
+                <p>
+                  <a href="http://arvindr21.github.io/howBrowserWorks">http://arvindr21.github.io/howBrowserWorks</a>
+                  <br/>
+                  
+                  <a href="http://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/">http://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/</a>
+                  <br/>
+                  
+                  <iframe width="854" height="480" src="https://www.youtube.com/embed/7fXhE5ErUCM" frameborder="0" allowfullscreen></iframe>
+                </p>
+              </section>
+            </section>
+
+            <section>
+              <section>
+                <h2>Reflow</h2>
+                
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/reflow-example-1.png" />
+                  <br/>
+                  <pre><code data-trim contenteditable>
+    .element {
+        float: left;
+    }
+                  </code></pre>
+                </p>
+              </section>
+              
+              <section>
+                <h2>Reflow</h2>
+                
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/reflow-example-2.png" />
+                  <br/>
+                  <pre><code data-trim contenteditable>
+    .element {
+        float: left;
+    }
+                  </code></pre>
+                </p>
+              </section>
+            </section>
+
+            <section>
+              <section>
+                <h2>Clears</h2>
+                
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/unclearedfooter.png" />
+                </p>
+              </section>
+
+              <section>
+                <h2>Clears</h2>
+                
+                <p>
+                  <img src="http://cursor-education.github.io/7CSS-Basics/clearedfooter.png" />
+                  <br/>
+                  <pre><code data-trim contenteditable>
+    .footer {
+        clear: both;
+        float: none;
+    }
+                  </code></pre>
+                </p>
+              </section>
+              
+              <section>
+                <h2>Clearfix</h2>
+                
+                <p>
+                  <img src="http://cursor-education.github.io/8CSS-Advanced/images/clearfix.png" />
+                  <br/>
+                  <pre><code data-trim contenteditable>
+    .clearfix:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+    .clearfix { display: inline-block; }
+
+    * html .clearfix { height: 1%; }
+    .clearfix { display: block; }
+                  </code></pre>
+                </p>
+              </section>
+              
+            </section>
+
+            <section>
+              <section>
+                <h2>z-index</h2>
+                
+                <p>
+                  <img src="http://ru.html.net/tutorials/css/figure020.gif" />
+                </p>
+              </section>
+            </section>
+            
+            <section>
+              <section>
+                <h2>Vendor prefixes</h2>
+                
+                <p>
+                  <ul>
+                    <li>-webkit- (Chrome, newer versions of Opera.)
+                    <li>-moz- (Firefox)
+                    <li>-o- (Old versions of Opera)
+                    <li>-ms- (Internet Explorer)
+                  </ul>
+                </p>
+              </section>
+            </section>
+            
+            <section>
+              <section>
+                <h2>standarts & validators</h2>
+                
+                <p>
+                  <a href="https://jigsaw.w3.org/css-validator/">https://jigsaw.w3.org/css-validator/</a>
+                </p>
+              </section>
+            </section>
+
+            <section class="text-left">
+              <h2>THE END</h2>
+            </section>
+
+            <section class="text-left">
+              <h2>Additional materials</h2>
+              <p>
+                <ul style="font-size:25px" class="items-margin-bottom">
+                  <li>
+                    <a href="https://specificity.keegan.st/">https://specificity.keegan.st/</a>
+                  
+                  <li>
+                    <a href="http://www.w3schools.com/cssref/css_selectors.asp">http://www.w3schools.com/cssref/css_selectors.asp</a>
+                  
+                  <li>
+                    <a href="http://www.w3schools.com/cssref/css_selectors.asp">http://www.w3schools.com/cssref/css_selectors.asp</a>
+                  
+                  <li>
+                    <a href="http://caniuse.com/">http://caniuse.com/</a>
+                  
+                  <li>
+                    <a href="https://codex.wordpress.org/Validating_a_Website">https://codex.wordpress.org/Validating_a_Website</a>
+                  
+                  <li>
+                    <a href="http://code.tutsplus.com/ru/tutorials/the-30-css-selectors-you-must-memorize--net-16048">http://code.tutsplus.com/ru/tutorials/the-30-css-selectors-you-must-memorize--net-16048</a>
+                </ul>
+              </p>
+            </section>
+          </div>
+        </div>
+        <script src="js/reveal.js"></script>
+        <script type="text/javascript" src="lib/js/head.min.js"></script>
+        <script>
+            Reveal.initialize({
+              history: true,
+              slideNumber: true,
+              dependencies: [
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/notes/notes.js' }
+              ]
+            });
+        </script>
+    </body>
+</html>
